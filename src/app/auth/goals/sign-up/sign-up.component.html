@@ -1,0 +1,24 @@
+<app-panel-header [header]="header"></app-panel-header>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <div class="form-element">
+        <label>Email address</label>
+        <input type="text" placeholder="theo@example.com" autocomplete="email" name="username" ngModel required>
+    </div>
+
+    <div class="form-element">
+        <label>Password</label>
+        <input type="password" placeholder="⬤⬤⬤⬤⬤⬤⬤⬤⬤" autocomplete="current-password" name="password" ngModel required>
+    </div>
+
+    <div id="error" class="form-element">
+        
+    </div>
+
+    <div class="form-element">
+        <button type="submit"><h2>Sign up</h2></button>
+    </div>
+  
+    <div class="links">
+        <span><a (click)="navigate('/auth/sign-in')">Already have an account? Sign in</a></span>
+    </div>
+</form>

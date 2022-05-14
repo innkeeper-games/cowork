@@ -1,0 +1,16 @@
+.subpage-link {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 1em 12px;
+    color: #011638;
+    text-decoration: none;
+}
+
+.subpage-title {
+    display: flex;
+}
+
+.subpage-link:hover {
+    background-color: #D5D5DB;
+}

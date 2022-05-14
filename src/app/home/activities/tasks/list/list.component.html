@@ -1,0 +1,29 @@
+<div class="list">
+    <div class="tasks">
+        <div *ngIf="!data.archive; else archiveBlock">
+            <div class="new-task" tabindex="0" (click)="focusNewTaskTitleField()" (keydown.enter)="focusNewTaskTitleField()">
+                <div id="add-task-button">
+                    <i class="bi bi-plus-circle"></i>
+                </div>
+                <input class="title" id="{{ data.list_id }}-new-task-title-field" type="text" placeholder="Add a new task..." (keydown.enter)="addTask()"/>
+                <a style="display: none;" class="filter" tabindex="0" (click)="toggleTags()" (keydown.enter)="toggleTags()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                        <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </a>
+            </div>
+            <span class="tip" [style.display]="tasks.size > 0 ? 'none' : 'inherit'">You don't have any tasks yet! Add one using the field above.</span>
+        </div>
+        <ng-template #archiveBlock>
+            <a class="archive" tabindex="0" (click)="toggleArchive()" (keydown.enter)="toggleArchive()">Archive 
+                <i id="archive-down-arrow" class="bi bi-caret-down"></i>
+                <i id="archive-up-arrow" [style.display]="data.archive ? 'none' : 'inherit'" class="bi bi-caret-up"></i>
+            </a>
+        </ng-template>
+        
+        <ng-template appFilterPopup></ng-template>
+        <div class="drop-area" [style.display]="data.archive ? 'none' : 'inherit'" id="{{ data.list_id }}" cdkDropList [cdkDropListConnectedTo]="lists" (cdkDropListDropped)="dropTask($event)">
+            <ng-template appTask></ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,90 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    cursor: inherit;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1rem 2ch 1rem 2ch;
+    border: 1px solid #888;
+    width: min(100%, 40rem);
+    max-height: 80%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.active-task-picker-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.83em;
+}
+
+.active-task-picker-header textarea {
+    flex-grow: 1;
+}
+
+.close-active-task-picker {
+    font-weight: bold;
+    margin-left: auto;
+    height: 1.3em;
+    padding: 1ch;
+    border-radius: 1ch;
+}
+
+.close-active-task-picker:hover, .close-active-task-picker:focus {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+.close-button {
+    background-color: #011638;
+    color: white;
+}
+
+.close-button:not(:hover):not(:active) {
+    box-shadow: 0 4px #010c1f;
+    margin-bottom: 4px;
+}
+
+.close-button:hover:not(:active) {
+    box-shadow: 0 2px #010c1f;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.active-task-picker-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    overflow-y: auto;
+}
+
+.active-task-picker-main {
+    display: flex;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+}

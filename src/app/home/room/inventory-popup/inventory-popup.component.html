@@ -1,0 +1,9 @@
+<div class="tooltip" [style.left]="200" [style.top]="200" cdkDrag>
+    <div class="tooltip-header"><h3>Inventory</h3><a (keydown.enter)="this.onClose()" (click)="this.onClose()" class="close-popup">X</a></div>
+    <div class="items">
+        <div class="item" *ngFor="let item of items;" tabindex="0" (click)="setActiveItem(item.item_id)" (keydown.enter)="setActiveItem(item.item_id)">
+            <img class="item-image" src="../../../../assets/room/vendor/{{ item.item_id }}.png" title="{{ item.title }}">
+            <span class="quantity">{{ item.quantity }}</span>
+        </div>
+    </div>
+</div>

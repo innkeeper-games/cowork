@@ -1,0 +1,83 @@
+.scroll-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+}
+
+#list {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 1;
+}
+
+#retrieving {
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 1em 0 1em 0;
+}
+
+#load-more {
+    color: #011638;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.margin {
+    margin: 0.2em 2ch 0.2em 2ch;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-label {
+    margin: 0 4ch 0 2ch;
+}
+
+.hidden {
+    display: none;
+}
+
+#chat-box {
+    display: flex;
+    padding: 1em 0 1em 0;
+}
+
+#chat-field {
+    flex: 1;
+    padding: 0.2em 1ch 0.2em 1ch;
+    margin: 0 2ch 0 2ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: #dfdfdf;
+    box-sizing: border-box;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: vertical;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #list {
+        padding-bottom: 5em;
+    }
+
+    #chat {
+        width: 70vh;
+        max-width: 70vw;
+    }
+
+    #chat-box {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        background-color: white;
+        border-top: 1px solid black;
+    }
+}

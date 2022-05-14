@@ -1,0 +1,59 @@
+.popup {
+    position: absolute;
+    margin-top: 1em;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    z-index: 1;
+    background-color: white;
+    padding: 1rem 2ch 1rem 2ch;
+    border-radius: 2em;
+    box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.tags {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    flex: 1;
+    overflow-wrap: break-word;
+    background-color: white;
+    margin-top: 0.5em;
+    border: none;
+}
+
+.new-tag {
+    flex: 1;
+    display: flex;
+}
+
+h3 {
+    margin: 0;
+    font-size: large;
+}
+
+.close-tags-popup {
+    font-weight: bold;
+    padding: 1ch;
+    border-radius: 1ch;
+    align-self: flex-end;
+}
+
+.close-tags-popup:hover, .close-tags-popup:focus {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+app-task-preview {
+    flex: 1;
+}

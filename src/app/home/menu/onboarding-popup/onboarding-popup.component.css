@@ -1,0 +1,109 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    cursor: inherit;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1rem 2ch 1rem 2ch;
+    border: 1px solid #888;
+    width: min(100%, 40rem);
+    max-height: 75%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.onboarding-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.83em;
+}
+
+.onboarding-header textarea {
+    flex-grow: 1;
+}
+
+.close-onboarding {
+    font-weight: bold;
+    margin-left: auto;
+    height: 1.3em;
+    padding: 1ch;
+    border-radius: 1ch;
+}
+
+.close-onboarding:hover, .close-onboarding:focus {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+.close-button {
+    background-color: #011638;
+    color: white;
+}
+
+.close-button:not(:hover):not(:active) {
+    box-shadow: 0 4px #010c1f;
+    margin-bottom: 4px;
+}
+
+.close-button:hover:not(:active) {
+    box-shadow: 0 2px #010c1f;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.onboarding-content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.onboarding-content div {
+    flex: 1 1 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#create-room {
+    padding: 0 2ch;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+span {
+    margin: 0.5em 0;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form button {
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+    }
+}

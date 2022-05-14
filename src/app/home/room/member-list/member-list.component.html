@@ -1,0 +1,23 @@
+<div id="member-list">
+    <div class="header" tabindex="0" (click)="toggleMembers()" (keydown.enter)="toggleMembers()" aria-haspopup="menu">
+        <h3>Members</h3>
+        <a>
+            <i id="members-down-arrow" class="bi bi-caret-down"></i>
+            <i id="members-up-arrow" [style.display]="'none'" class="bi bi-caret-up"></i>
+        </a>
+    </div>
+    <div id="members" style="display: none;">
+        <div class="member" *ngFor="let member of onlineMembersList;" tabindex="0" (click)="openTooltip($event, member)" (keydown.enter)="openTooltip($event, member)" aria-haspopup="menu">
+            <span>{{ member.displayName }}</span>
+            <div class="icons">
+                <span class="online" title="{{ member.displayName }} is online.">⬤</span>
+            </div>
+        </div>
+        <div class="member" *ngFor="let member of offlineMembersList;" tabindex="0" (click)="openTooltip($event, member)" (keydown.enter)="openTooltip($event, member)" aria-haspopup="menu">
+            <span>{{ member.displayName }}</span>
+            <div class="icons">
+
+            </div>
+        </div>
+    </div>
+</div>

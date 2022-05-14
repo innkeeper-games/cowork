@@ -1,0 +1,4 @@
+<div class="tag" [style.background-color]="this.backgroundColor" tabindex="0" (click)="onSelect(this.data)" (keydown.enter)="onSelect(this.data)">
+    <div class="title">{{ this.data.title }}</div>
+    <div id="{{ this.data.tag_id }}-x" [ngClass]="{'delete' : this.onDelete != undefined}" class="placeholder" tabindex="0" (click)="onDelete(this.data, $event)" (keydown.enter)="onDelete(this.data, $event)">x</div>
+</div>

@@ -1,0 +1,8 @@
+<div class="tooltip" [style.left]="this.x" [style.top]="this.y" cdkDrag>
+    <div class="tooltip-header">
+        <div class="name">
+            <app-pro-badge [style.display]="pro ? 'inherit' : 'none'">(Pro)</app-pro-badge><h3>{{ this.displayName }}</h3>
+        </div><a (keydown.enter)="this.onClose()" (click)="this.onClose()" class="close-task">X</a></div>
+    <span>{{ this.displayName }} is currently working on:</span>
+    <app-task [isListing]="false" [data]="this.activeTaskData"></app-task>
+</div>

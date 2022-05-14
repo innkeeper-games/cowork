@@ -1,0 +1,12 @@
+<app-panel-header [header]="header"></app-panel-header>
+<form [style.display]="responseReceived ? 'flex' : 'none'">
+    <div class="join-form-element" [style.display]="roomValid ? 'flex' : 'none'">
+        <p><fa-icon [icon]="faUsers"></fa-icon> {{ memberCount }} members in this room</p>
+        <p>{{ roomDescription }}</p>
+        <button (click)="joinRoom()" (keydown.enter)="joinRoom()">Enter {{ roomTitle }}</button>
+    </div>
+    <div class="join-form-element" [style.display]="roomValid ? 'none' : 'flex'">
+        <div class="users">That join link's not valid!</div>
+        <button (click)="goHome()"><h2>Go home</h2></button>
+    </div>
+</form>

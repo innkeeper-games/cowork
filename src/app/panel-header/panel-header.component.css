@@ -1,0 +1,12 @@
+.header {
+    display: block;
+    text-align: center;
+    padding: 0.2em 0 0.2em 0;
+}
+
+h1 {
+    font-size: large;
+    display: contents;
+    text-decoration: none;
+    margin: 0;
+}

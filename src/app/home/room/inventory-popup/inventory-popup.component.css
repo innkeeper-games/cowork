@@ -1,0 +1,84 @@
+.tooltip {
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: fixed;
+    bottom: 6em;
+    right: 0;
+    overflow: auto;
+    width: 300px;
+    height: 50%;
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 1rem 2ch 1rem 2ch;
+    border-radius: 2em;
+    box-shadow: 0 1rem 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3.5em, 1fr));
+    gap: 1rem;
+    overflow-y: auto;
+}
+
+.item-image {
+    height: 4em;
+    width: auto;
+}
+
+button {
+    font-size: large;
+}
+
+.item {
+    position: relative;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 8px;
+}
+
+.item:hover {
+    cursor: pointer;
+    background-color: ghostwhite;
+}
+  
+.item:focus {
+    background-color: ghostwhite;
+}
+
+.quantity {
+    position: absolute;
+    font-size: 1em;
+    bottom: 0;
+    right: 0;
+    padding: 2px 5px;
+    border-radius: 8px;
+    background: #4e4e4e;
+    color: white;
+}
+
+h3 {
+    margin: 0;
+}
+
+.close-popup {
+    font-weight: bold;
+    padding: 1ch;
+    border-radius: 1ch;
+    align-self: flex-end;
+}
+
+.close-popup:hover, .close-popup:focus {
+    background-color: lightgray;
+    cursor: pointer;
+}

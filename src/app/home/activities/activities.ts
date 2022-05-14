@@ -1,0 +1,1 @@
+export const activities: Array<string> = ['room', 'store', 'chat', 'timer', 'stats', 'tasks', 'settings'];

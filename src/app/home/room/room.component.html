@@ -1,0 +1,35 @@
+<div class="room">
+    <app-checkpoint-list></app-checkpoint-list>
+    <app-member-list [room]="this"></app-member-list>
+    <canvas id="game" (click)="requestSetTarget()" [ngClass]="{'editing': editMode}">
+    </canvas>
+    <button class="move-button" id="up" (click)="onMove(0, -160)" (keydown.enter)="onMove(0, -160)">Move North</button>
+    <button class="move-button" id="down" (click)="onMove(0, 160)" (keydown.enter)="onMove(0, 160)">Move South</button>
+    <button class="move-button" id="left" (click)="onMove(-160, 0)" (keydown.enter)="onMove(-160, 0)">Move West</button>
+    <button class="move-button" id="right" (click)="onMove(160, 0)" (keydown.enter)="onMove(160, 0)">Move East</button>
+    <div id="game-log" role="log">
+        
+    </div>
+    <ng-template appPlayerTooltip></ng-template>
+    <ng-template appInventoryPopup></ng-template>
+    <ng-template appVendorPopup></ng-template>
+    <ng-template appEditItemTooltip></ng-template>
+    <div id="wealth">
+        <span>{{ this.wealth || 0}}</span>
+        <i class="bi bi-coin"></i>
+    </div>
+    <div id="editor-tools" [ngStyle]="{ 'display': this.editButtonDisplay }">
+        <a title="Store" tabindex="0" (keydown.enter)="openVendorPopup()" (click)="openVendorPopup()" id="store-nav">
+            <i class="bi bi-shop"></i>
+        </a>
+        <a title="Inventory" tabindex="0" (keydown.enter)="openInventoryPopup()" (click)="openInventoryPopup()" id="inventory-nav">
+            <i class="bi bi-briefcase"></i>
+        </a>
+        <a title="Edit Room" tabindex="0" (keydown.enter)="toggleEditMode()" (click)="toggleEditMode()" id="edit-room-nav" [ngClass]="{'active': this.editMode}">
+            <i class="bi bi-pencil"></i>
+        </a>
+    </div>
+    <form id="chat-box-room" novalidate>
+        <textarea id="chat-field-room" class="contents" tabindex="0" (keydown.enter)="onSendChat($event)" placeholder="Message the room..."></textarea>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="modal" (click)="onClose($event)">
+    <div id="editor" class="modal-content" tabindex="0" role="menu">
+        <div class="active-task-picker-header">
+            <h1>Select a task to work on</h1>
+            <a tabindex="0" (keydown.enter)="onClose($event)" (click)="onClose($event)" class="close-active-task-picker">X</a>
+        </div>
+        <div class="active-task-picker-content">
+            <app-list [data]="data" [onTaskClick]="onTaskClick.bind(this)"></app-list>
+        </div>
+    </div>
+</div>

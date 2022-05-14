@@ -1,0 +1,46 @@
+.tooltip {
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: fixed;
+    overflow: auto;
+    width: 300px;
+    background-color: white;
+    padding: 1rem 2ch 1rem 2ch;
+    border-radius: 2em;
+    box-shadow: 0 1rem 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+h3 {
+    margin: 0;
+}
+
+.close-task {
+    font-weight: bold;
+    padding: 1ch;
+    border-radius: 1ch;
+    align-self: flex-end;
+}
+
+.close-task:hover, .close-task:focus {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+app-task-preview {
+    flex: 1;
+}

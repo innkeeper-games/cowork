@@ -1,0 +1,95 @@
+app-navbar {
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+#scroll {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#pricing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    max-width: 25%;
+    border: 2px solid #011638;
+    border-radius: 2em;
+    margin: 2em 2ch;
+    padding: 2ch;
+}
+
+a {
+    color: #011638;
+}
+
+.plan:target {
+    background-color: #F5F5FC;
+}
+
+h2 {
+    text-align: center;
+}
+
+.title {
+    margin-top: 2em;
+}
+
+.plan:hover {
+    background-color: #F5F5FC;
+}
+
+h3 {
+    display: inline;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.price {
+    margin: 1em 0;
+}
+
+.time {
+    font-family: 'Poppins Bold';
+    opacity: 0.5;
+}
+
+ul {
+    list-style-type: '✓';
+    padding-left: 1ch;
+    margin: 0;
+    margin-bottom: 2em;
+}
+
+li {
+    padding-left: 1ch;
+}
+
+.cta {
+    width: 100%;
+    text-decoration: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.5em 0;
+}
+
+@media only screen and (max-width: 600px) {
+    #pricing {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan {
+        margin: 1em 2ch;
+        max-width: none;
+    }
+}

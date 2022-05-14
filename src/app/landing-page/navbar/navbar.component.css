@@ -1,0 +1,45 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #011638;
+    padding: 0 5ch;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+img {
+    height: 3em;
+    margin: 1ch;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    gap: 2ch;
+    list-style: none;
+    margin-right: 2ch;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: white;
+    text-decoration: underline;
+}
+
+button {
+    padding: 0.5em 2ch;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        padding: 0;
+    }
+}

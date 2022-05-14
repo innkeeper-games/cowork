@@ -1,0 +1,10 @@
+<div class="popup">
+    <div class="popup-header"><h3>Filter</h3></div>
+    <span>Available tags:</span>
+    <div class="tags">
+        <ng-template appTag></ng-template>
+    </div>
+    <div class="new-tag">
+        <input class="title" id="new-tag-title-field" type="text" placeholder="Add a new tag..." (keydown.enter)="addTag()"/>
+    </div>
+</div>

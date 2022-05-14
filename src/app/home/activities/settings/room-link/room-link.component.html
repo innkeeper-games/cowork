@@ -1,0 +1,11 @@
+<div class="room-link form">
+    <div class="item"><h4>{{ data.room_title }}</h4></div>
+    <div class="item" [ngStyle]="{ 'display': this.descriptionDisplay}"><span>{{ data.room_description }}</span></div>
+    <div class="item">
+        <div>
+            <span class="online" title="Online">⬤ </span>
+            <span>{{ data.online }}</span>
+        </div>
+        <button (keyboard.enter)="enterRoom(data.room_id, data.room_title)" (click)="enterRoom(data.room_id, data.room_title)">Enter</button>
+    </div>
+</div>

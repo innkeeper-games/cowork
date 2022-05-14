@@ -1,0 +1,80 @@
+.chat-message:hover, .chat-message:focus, .chat-message:focus-within {
+    background-color: #dfdfdf;
+}
+
+.chat-message {
+    padding: 0.5em 2ch 0.5em 2ch;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.author:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.meta {
+    display: flex;
+    align-items: baseline;
+    gap: 1ch;
+}
+
+.tools {
+    display: flex;
+    gap: 1ch;
+    visibility: hidden;
+}
+
+.tools a {
+    color: #b4b4b4;
+    cursor: pointer;
+}
+
+.tools a:hover, .tools a:focus {
+    color: black;
+}
+
+.editable:hover .tools, .editable:focus .tools, .editable:focus-within .tools {
+    visibility: visible;
+}
+
+.editing:hover {
+    background-color: white;
+}
+
+.sent-date, .edited {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: smaller;
+}
+
+form {
+    display: flex;
+    padding: 1em 0 1em 0;
+}
+
+.editing-contents {
+    flex: 1;
+    padding: 0.2em 1ch 0.2em 1ch;
+    margin: 0 2ch 0 2ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: #dfdfdf;
+    box-sizing: border-box;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: vertical;
+    border-radius: 8px;
+}
+
+p {
+    margin: 0 0 0 0;
+}

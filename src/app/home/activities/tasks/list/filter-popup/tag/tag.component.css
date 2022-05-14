@@ -1,0 +1,46 @@
+.tag {
+    cursor: pointer;
+    padding: 0.5em 1ch 0.5em 1ch;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+.title {
+    flex-grow: 1;
+}
+
+.placeholder {
+    display: none;
+}
+
+.delete, .placeholder {
+    visibility: hidden;
+    padding: 2px;
+}
+
+.delete {
+    display: initial;
+}
+
+.tag:hover .delete, .tag:focus .delete {
+    visibility: visible;
+}
+
+.delete:hover, .delete:focus {
+    background-color: #ffffff79;
+    border-radius: 2px;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+  
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

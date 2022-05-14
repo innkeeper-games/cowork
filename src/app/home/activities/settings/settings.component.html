@@ -1,0 +1,220 @@
+<ng-template appSubscribePopup></ng-template>
+<div class="scroll-container">
+    <app-panel-header [header]="header"></app-panel-header>
+    <div class="list">
+
+        <div [style.display]="subpage == undefined ? 'inherit' : 'none'" class="nav">
+            <h3>Account</h3>
+            <app-subpage-link [open]="navigate.bind(this)" [title]="'Profile'" [subpage]="'profile'"></app-subpage-link>
+            <app-subpage-link [open]="navigate.bind(this)" [title]="'Subscription'" [subpage]="'subscribe'"></app-subpage-link>
+
+            <h3>Room</h3>
+            <app-subpage-link [open]="navigate.bind(this)" [title]="roomTitle" [subpage]="'current-room'"></app-subpage-link>
+            <app-subpage-link [open]="navigate.bind(this)" [title]="'Other Rooms'" [subpage]="'other-rooms'"></app-subpage-link>
+            <app-subpage-link [open]="navigate.bind(this)" [title]="'Invitations'" [subpage]="'invitations'"></app-subpage-link>
+        </div>
+
+        <div [style.display]="subpage == 'profile' ? 'inherit' : 'none'" id="profile" class="subpage">
+            <div class="subpage-header">
+                <a class="back" (click)="closeSubpage()" (keyboard.enter)="closeSubpage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </a>
+                <h4>Profile</h4>
+            </div>
+            <h3>Update Display Name</h3>
+            <form class="form" #i="ngForm" (ngSubmit)="onSubmitDisplayName(i)" novalidate>
+                <div class="form-element">
+                    <input type="text" placeholder="{{ displayName }}" name="display_name" ngModel required>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+        <div [style.display]="subpage == 'subscribe' ? 'inherit' : 'none'" id="subscription" class="subpage">
+            <div class="subpage-header">
+                <a class="back" (click)="closeSubpage()" (keyboard.enter)="closeSubpage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </a>
+                <h4>Subscription</h4>
+            </div>
+
+            <div *ngIf="pro; then proBlock else subscribeBlock"></div>
+            <ng-template #proBlock>
+                <div class="pro-header">
+                    <app-pro-badge></app-pro-badge>
+                    <h2>Cowork Pro (Active)</h2>
+                </div>
+                <p>
+                    Thank you so much for your ongoing Pro membership! Your support is critical in helping us keep
+                    Cowork open. As a reminder, your membership gets you all the following features...
+                </p>
+                <ul>
+                    <li>Everything in Basic, plus...</li>
+                    <li>Advanced personal productivity statistics, with more insights in development</li>
+                    <li>More custom room environment features</li>
+                    <li>More cosmetic options for your avatar</li>
+                    <li>More members in rooms you own</li>
+                    <li>More rooms to host</li>
+                    <li>A badge indicating your support for indie software</li>
+                </ul>
+                <p>
+                    To cancel your subscription, please send an email to <a href="mailto:support@joincowork.com">support@joincowork.com</a>.
+                </p>
+            </ng-template>
+            <ng-template #subscribeBlock>
+                <div class="pro-header">
+                    <app-pro-badge></app-pro-badge>
+                    <h2>Cowork Pro (Coming soon)</h2>
+                </div>
+                <p>
+                    Easily track your productivity with friends and support indie software
+                </p>
+                <div class="price"><h3>$5</h3><span class="time">/mo</span></div>
+                <ul>
+                    <li>Everything in Basic, plus...</li>
+                    <li>Advanced personal productivity statistics, with more insights in development</li>
+                    <li>More custom room environment features</li>
+                    <li>More cosmetic options for your avatar</li>
+                    <li>More members in rooms you own</li>
+                    <li>More rooms to host</li>
+                    <li>A badge indicating your support for indie software</li>
+                </ul>
+                <div id="dropin-wrapper" style="display: none;">
+                    <div id="checkout-message"></div>
+                    <div id="dropin-container"></div>
+                    <button id="submit-button">Submit payment</button>
+                </div>
+            </ng-template>
+        </div>
+
+        <div [style.display]="subpage == 'other-rooms' ? 'inherit' : 'none'" id="other-rooms" class="subpage">
+            <div class="subpage-header">
+                <a class="back" (click)="closeSubpage()" (keyboard.enter)="closeSubpage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </a>
+                <h4>Other Rooms</h4>
+            </div>
+            <div id="enter-room" class="hidden">
+                <h3>Enter Another Room</h3>
+                <ng-template appRoomLink></ng-template>
+            </div>
+            <h3>Join a Public Room</h3>
+            <form class="form" #j="ngForm" (ngSubmit)="onSubmitJoin(j)" novalidate>
+                <div class="form-element">
+                    <input type="text" placeholder="Room code" name="joinCode" ngModel required>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Join</button>
+                </div>
+            </form>
+            <h3>Create a New Room</h3>
+            <form class="form" #c="ngForm" (ngSubmit)="onSubmitCreate(c)" novalidate>
+                <div class="form-element">
+                    <input type="text" placeholder="Room name" name="title" ngModel required>
+                </div>
+                <div class="form-element">
+                    <button type="submit">Create</button>
+                </div>
+            </form>
+        </div>
+
+        <div [style.display]="subpage == 'current-room' ? 'inherit' : 'none'" id="current-room" class="subpage">
+            <div class="subpage-header">
+                <a class="back" (click)="closeSubpage()" (keyboard.enter)="closeSubpage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </a>
+                <h4>{{ roomTitle }}</h4>
+            </div>
+            <div id="room-settings" class="hidden">
+                <h3>Privacy Settings</h3>
+                <form class="privacy-form form hidden">
+                    <div>
+                        <p class="form-label">{{ roomTitle }} is currently public. Anyone with the link or room code
+                        can join this room.</p>
+                    </div>
+                    <div class="form-element">
+                        <button (click)="onToggleRoomPrivacy()" type="submit">Make private</button>
+                    </div>
+                </form>
+                <form class="privacy-form form">
+                    <div>
+                        <p class="form-label">{{ roomTitle }} is currently private. No one can join this room without an invitation.</p>
+                    </div>
+                    <div class="form-element">
+                        <button (click)="onToggleRoomPrivacy()" type="submit">Make public</button>
+                    </div>
+                </form>
+                <h3>Update room title</h3>
+                <form class="form" #l="ngForm" (ngSubmit)="onSubmitRoomTitle(l)" novalidate>
+                    <div class="form-element">
+                        <input type="text" placeholder="{{ roomTitle }}" name="room_title" ngModel required>
+                    </div>
+                    <div class="form-element">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+                <h3>Update room description</h3>
+                <form class="description-form" #k="ngForm" (ngSubmit)="onSubmitRoomDescription(k)" novalidate>
+                    <textarea [placeholder]="roomDescription == 'null' || roomDescription == null ? roomTitle : roomDescription" name="room_description" ngModel required></textarea>
+                    <div class="description-save">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+                <h3 class="privacy-form hidden">Share an invite link for {{ roomTitle }}</h3>
+                <form class="form privacy-form hidden">
+                    <div class="form-element">
+                        <input readonly value="joincowork.com/j/{{ roomId }}"/>
+                    </div>
+                    <div class="form-element">
+                        <button [cdkCopyToClipboard]="roomLink" type="submit">Copy</button>
+                    </div>
+                </form>
+                <h3>Leave {{ roomTitle }}</h3>
+                <form class="form" novalidate>
+                    <div class="form-element">
+                        <div class="form-label">Leave {{ roomTitle }}?</div>
+                    </div>
+                    <div class="form-element">
+                        <button (click)="onSubmitLeave()">Leave</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div [style.display]="subpage == 'invitations' ? 'inherit' : 'none'" id="invitations" class="subpage">
+            <div class="subpage-header">
+                <a class="back" (click)="closeSubpage()" (keyboard.enter)="closeSubpage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+                        <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+                    </svg>
+                </a>
+                <h4>Invitations</h4>
+            </div>
+            <h3>Invite Another User to {{ roomTitle }}</h3>
+                    <form class="form" #m="ngForm" (ngSubmit)="onSubmitInvite(m)" novalidate>
+                        <div class="form-element">
+                            <input type="text" placeholder="Email address" name="username" ngModel required>
+                        </div>
+                        <div class="form-element">
+                            <button type="submit">Invite</button>
+                        </div>
+                    </form>
+                    <span [style.display]="this.sent ? 'inherit' : 'none'">Thanks! We'll send them an invite.</span>
+                <h3>Pending Invitations</h3>
+                <p>You don't have any invitations.</p>
+                <div id="invitations" class="hidden">
+                    <ng-template appRoomInvitation></ng-template>
+                </div>
+        </div>                
+    </div>
+</div>

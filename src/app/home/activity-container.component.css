@@ -1,0 +1,34 @@
+.activities {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    height: 100%;
+    background-color: #011638;
+}
+
+.activity {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    display: flex;
+    border-radius: 0 2rem 0 0;
+    flex-direction: column;
+    flex: 1 0 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.visible {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+    .activity {
+        height: calc(100% - 3.4em);
+        border-radius: 2rem 2rem 0 0;
+    }
+}

@@ -1,0 +1,7 @@
+<div class="invitation">
+    <div class="item form">
+        <p class="room-label">{{ data.title }}</p>
+        <button (click)="declineInvitation(data.invitation_id)"><div class="button-label">Decline</div></button>
+        <button (click)="joinRoom(data.room_id)"><div class="button-label">Accept</div></button>
+    </div>
+</div>

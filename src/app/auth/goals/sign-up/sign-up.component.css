@@ -1,0 +1,54 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 1em;
+    padding: 0 2ch;
+}
+
+a {
+    color: #011638;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+input {
+    font-size: 1.2em;
+    padding: 0.5em 1ch;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+
+h2 {
+    margin: 0.2em 0 0.2em 0;
+}
+
+#error {
+    display: none;
+}
+
+#visible-error {
+    color: #D64045;
+    display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+    form {
+        padding: 0 0.5em 0 0.5em;
+    }
+
+    input {
+        font-size: 1em;
+    }
+}

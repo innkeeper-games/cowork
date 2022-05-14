@@ -1,0 +1,37 @@
+<app-panel-header [header]="header"></app-panel-header>
+<ng-template appActiveTaskPickerPopup></ng-template>
+<div id="not-in-session">
+    <div id="consumable"><i class="bi bi-stopwatch"></i></div>
+    <h2 [ngStyle]="{ 'display': this.participantsDisplay }">Participants:</h2>
+    <p id="participants"><span id="participants" *ngFor="let participant of participants; let isLast=last" [ngStyle]="{ 'display': this.participantsDisplay }"><a class="participant" tabindex="0" (click)="openTooltip(participant.display_name, participant.account_id)" (keyboard.down)="openTooltip(participant.display_name, participant.account_id)">{{ participant.display_name }}</a>{{ isLast ? '' : ', ' }}</span></p>
+    <div tabindex="0" class="tooltip-parent">
+        <h2>Task:</h2>
+        <span role="tooltip">As you work with a timer, your time will be logged to the task below. Select it to change it out!</span>
+    </div>
+    <app-task [data]="this.activeTaskData" [onClick]="this.changeActiveTask.bind(this)" aria-haspopup="menu"></app-task>
+    <div id="join" [ngStyle]="{ 'display': this.joinDisplay}">
+        <h2>Join a session</h2>
+        <table>
+            <tr>
+                <th>Participants</th>
+                <th>End time</th>
+            </tr>
+            <tr *ngFor="let session of sessions;">
+                <th><span id="participants" *ngFor="let participant of session.participants; let isLast=last"><a class="participant" tabindex="0" (click)="openTooltip(participant.display_name, participant.account_id)" (keyboard.down)="openTooltip(participant.display_name, participant.account_id)">{{ participant.display_name }}</a>{{ isLast ? '' : ', ' }}</span></th>
+                <th>{{ session.expected_end_time | date:'h:mm a' }}</th>
+                <th class="join"><button class="join-button" (click)="join(session.session_id)">{{ activeTask ? "Join" : "Pick a task" }}</button></th>
+            </tr>
+        </table>
+    </div>
+    <div id="host">
+        <div id="time">
+            <a title="Reduce time by 5 minutes" tabindex="0" id="left-arrow" class="arrow" [ngStyle]="{ 'visibility': this.leftVisibility }" (click)="addTime($event, -5)" (keydown.enter)="addTime($event, -5)"><</a>
+            <div id="time-display">{{ this.timeRemaining | date:'mm:ss'}}</div>
+            <a title="Increase time by 5 minutes" tabindex="0" id="right-arrow" class="arrow" [ngStyle]="{ 'visibility': this.rightVisibility }" (click)="addTime($event, 5)" (keydown.enter)="addTime($event, 5)">></a>
+        </div>
+        <div id="start">
+            <button id="start-button" [ngStyle]="{ 'display': this.startButtonDisplay }" (click)="start()">{{ activeTask ? "Start" : "Pick a task" }}</button>
+            <button id="leave-button" [ngStyle]="{ 'display': this.leaveButtonDisplay }" (click)="leave()">Leave</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+.container {
+    padding: 0 2ch 1em 2ch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+#days, #hours, #minutes {
+    margin: 0;
+}
+
+app-loading-monetization, app-monetized, app-not-monetized {
+    display: none;
+}
+
+#lock {
+    text-align: center;
+    font-size: 3em;
+}
+
+.advanced {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+.advanced-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+#membership {
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    border: 2px black solid;
+    margin-bottom: 1em;
+    padding: 0.2em 2ch;
+    background-color: papayawhip;
+}
+
+#membership app-pro-badge {
+    font-size: 2em;
+}
+
+#membership-message {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    margin: 2ch 1em;
+}
+
+
+.task-breakdown {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+}
+
+.listing {
+    width: 75%;
+}
+
+.current-state {
+    display: flex;
+    flex-direction: column;
+}
+
+.insight {
+    margin: 0;
+    align-self: flex-start;
+}
+
+.achievements {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 1em;
+}
+
+.achievement {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    align-items: stretch;
+}
+
+.achievement-content {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 0;
+    padding: 0.2em 2ch;
+}
+
+.achievement-reward {
+    display: flex;
+    align-items: center;
+}
+
+.achievement div h3 {
+    margin: 0;
+}
+
+.progress {
+    position: absolute;
+    background-color: blanchedalmond;
+    z-index: 0;
+    height: 100%;
+}
+
+.complete {
+    background-color: #ecffef;
+}
+
+.just-completed {
+    background: #ecffef;
+    animation: complete 2s infinite alternate;
+}
+
+@keyframes complete {
+    from {background-color: #ecffef;}
+    to {background-color: #96d39f;}
+}

@@ -1,0 +1,36 @@
+<div class="modal">
+    <div id="editor" class="modal-content">
+        <div class="onboarding-header">
+            <h2>Welcome to Cowork!</h2>
+        </div>
+        <span>Welcome! Join or create a coworking room to get started.</span>
+        <div class="onboarding-content">
+            <h3>Join a publicly listed room</h3>
+            <span>You'll be able to join these later, too.</span>
+            <div id="enter-room">
+                <app-room-link *ngFor="let listedRoom of listedRooms;" [data]="listedRoom" [join]="true"></app-room-link>
+            </div>
+            <h3>Create or join a room</h3>
+            <div id="create-room">
+                <h4>Create a room</h4>
+                <form class="form" #c="ngForm" (ngSubmit)="onSubmitCreate(c)" novalidate>
+                    <div class="form-element">
+                        <input type="text" placeholder="Room name" name="title" ngModel required>
+                    </div>
+                    <div class="form-element">
+                        <button type="submit">Create</button>
+                    </div>
+                </form>
+                <h4>Join a public room</h4>
+                <form class="form" #j="ngForm" (ngSubmit)="onSubmitJoin(j)" novalidate>
+                    <div class="form-element">
+                        <input type="text" placeholder="Room code" name="joinCode" ngModel required>
+                    </div>
+                    <div class="form-element">
+                        <button type="submit">Join</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

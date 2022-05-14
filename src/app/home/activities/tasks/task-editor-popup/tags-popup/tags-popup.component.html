@@ -1,0 +1,12 @@
+<div class="popup">
+    <div class="popup-header">
+        <h3>Tags</h3>
+        <a tabindex="0" (keydown.enter)="onClose($event)" (click)="onClose($event)" class="close-tags-popup">X</a>
+    </div>
+    <div class="tags">
+        <ng-template appTag></ng-template>
+    </div>
+    <div class="new-tag">
+        <input class="title" id="new-tag-title-field" type="text" placeholder="Add a new tag..." (keydown.enter)="addTag()"/>
+    </div>
+</div>

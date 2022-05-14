@@ -1,0 +1,18 @@
+<div class="tooltip" cdkDrag>
+    <div class="tooltip-header"><h3>Vendor</h3><a (keydown.enter)="this.onClose()" (click)="this.onClose()" class="close-popup">X</a></div>
+    <div class="items">
+        <div class="item" *ngFor="let item of items;">
+            <div class="item-content">
+                <img class="item-image" src="../../../../assets/room/vendor/{{ item.item_id }}.png">
+                <div>
+                    <h3>{{ item.title }}</h3>
+                </div>
+                <div class="item-cost">
+                    <span>{{ item.cost }} 🪙</span>
+                </div>
+                <button (click)="submitBuyItem(item.item_id)" (keydown.enter)="submitBuyItem(item.item_id)">Buy</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

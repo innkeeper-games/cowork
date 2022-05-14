@@ -1,0 +1,52 @@
+.goals {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding: 1em 2ch 1em 2ch;
+    flex: 1 0 0;
+}
+
+.goal {
+    display: none;
+}
+
+.visible {
+    flex: 1 0 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2em;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+h1 {
+    display: contents;
+    text-decoration: none;
+    color: #F5F5FC;
+    margin: 0;
+    margin-top: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .goals {
+        min-width: 0;
+        min-height: 0;
+        height: 100%;
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}

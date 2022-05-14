@@ -1,0 +1,17 @@
+<div class="tooltip" [style.left]="this.x" [style.top]="this.y" cdkDrag>
+    <div class="name">
+        <textarea id="name-field" (keydown.enter)="onName(displayName)" (blur)="onName(displayName)"
+                [(ngModel)]="displayName" [disabled]="ownerAccountId != accountId" placeholder="{{ displayName }}">{{ displayName }}</textarea>
+    </div>
+    <div class="buttons">
+        <a name="Eraser" tabindex="0" (keydown.enter)="onErase()" (click)="onErase()" id="eraser-nav">
+            <i class="bi bi-briefcase"></i>
+        </a>
+        <a [style.display]="ownerAccountId == accountId ? 'inherit' : 'none'" name="Move" tabindex="0" (keydown.enter)="onMove()" (click)="onMove()">
+            <i class="bi bi-arrows-move"></i>
+        </a>
+        <a [style.display]="ownerAccountId == accountId && object.hasOwnProperty('variants') ? 'inherit' : 'none'" name="Rotate" tabindex="0" (keydown.enter)="onRotate()" (click)="onRotate()">
+            <i class="bi bi-arrow-clockwise"></i>
+        </a>
+    </div>
+</div>

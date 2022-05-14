@@ -1,0 +1,25 @@
+.room-link:hover {
+    background-color: #D5D5DB;
+}
+
+.room-link {
+    padding: 0.5em 2ch;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h4 {
+    margin: 0;
+}
+
+.online {
+    color: #18701d;
+}
+
+button {
+    padding: 0.2em 2ch 0.2em 2ch;
+}

@@ -1,0 +1,17 @@
+<div id="checkpoint-list">
+    <div class="header" tabindex="0" (click)="toggleCheckpoints()" (keydown.enter)="toggleCheckpoints()" aria-haspopup="menu">
+        <h3>{{ roomTitle || "Room" }}</h3>
+        <a [style.display]="checkpointsList.length > 0 ? 'inherit' : 'none'">
+            <i id="checkpoints-down-arrow" class="bi bi-caret-down"></i>
+            <i id="checkpoints-up-arrow" [style.display]="'none'" class="bi bi-caret-up"></i>
+        </a>
+    </div>
+    <div id="checkpoints" style="display: none;">
+        <div class="checkpoint" *ngFor="let checkpoint of checkpointsList;" tabindex="0" (click)="requestWarp(checkpoint)" (keydown.enter)="requestWarp(checkpoint)">
+            <span>{{ checkpoint.displayName || "Unnamed checkpoint" }}</span>
+            <div class="icons">
+                <i class="bi bi-geo-alt-fill"></i>
+            </div>
+        </div>
+    </div>
+</div>

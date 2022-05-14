@@ -1,0 +1,13 @@
+<div class="modal" (click)="onClose($event)">
+    <div id="editor" class="modal-content">
+        <div class="update-notes-header">
+            <h1>What's New</h1>
+            <a tabindex="0" (keydown.enter)="onClose($event)" (click)="onClose($event)" class="close-update-notes">X</a>
+        </div>
+        <div class="update-notes-content">
+            <a tabindex="0" id="left-arrow" class="arrow" [ngStyle]="{ 'visibility': this.leftVisibility }" (click)="addIndex(-1)" (keydown.enter)="addIndex(-1)"><</a>
+            <iframe id="post" [src]="'https://blog.joincowork.com/' + data[updateNotesIndex] | safe: 'resourceUrl'"></iframe>
+            <a tabindex="0" id="right-arrow" class="arrow" [ngStyle]="{ 'visibility': this.rightVisibility }" (click)="addIndex(1)" (keydown.enter)="addIndex(1)">></a>
+        </div>
+    </div>
+</div>

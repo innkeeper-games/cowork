@@ -1,0 +1,184 @@
+canvas {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #238531;
+}
+
+.room {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    background-color: #011638;
+    position: relative;
+}
+
+app-member-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+app-checkpoint-list {
+    position: absolute;
+    top: 0;
+    left: 24px;
+}
+
+#game-editor {
+    position: absolute;
+    right: 2ch;
+    bottom: 1em;
+    width: 4ch;
+    height: 2em;
+    border-radius: 2em;
+}
+
+#wealth {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 24px;
+    padding: 0.2em 2ch;
+    align-items: baseline;
+    gap: 1ch;
+    background-color: white;
+    border-radius: 1em 1em 0 0;
+}
+
+#editor-tools {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    padding: 0.2em 2ch;
+    gap: 2ch;
+    background-color: white;
+    border-radius: 2em 2em 0 0;
+}
+
+#wealth .bi-coin {
+    padding-bottom: 0.1em;
+    color: black;
+}
+
+.active {
+    color: black;
+}
+
+a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: #b4b4b4;
+    cursor: pointer;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: left;
+    padding: 0.2em;
+}
+
+a:hover:not(.selected), a:focus {
+    color: black;
+    outline: none;
+}
+
+.selected {
+    color: black;
+    outline: none;
+}
+
+#chat-box-room {
+    display: none;
+    padding: 1em 0 1em 0;
+}
+
+#chat-field-room {
+    flex: 1;
+    padding: 0.2em 1ch 0.2em 1ch;
+    margin: 0 2ch 0 2ch;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: #dfdfdf;
+    box-sizing: border-box;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: vertical;
+    border-radius: 8px;
+}
+
+.editing {
+    box-shadow: inset 0px 0px 50px 10px #4597DD;
+}
+
+.move-button {
+    position: absolute;
+}
+
+#game-log {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#up {
+    left: 50%;
+}
+
+#down {
+    left: 50%;
+    bottom: 0;
+}
+
+#left {
+    top: 50%;
+    left: 24px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+}
+
+#right {
+    top: 50%;
+    right: 0;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+}
+
+@media only screen and (min-width: 600px) {
+    canvas {
+        border-radius: 2rem 0 0 0;
+        margin-left: 24px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    app-checkpoint-list {
+        left: 0;
+    }
+
+    #wealth {
+        bottom: 9em;
+        left: 2ch;
+        border-radius: 1em;
+    }
+
+    #editor-tools {
+        display: none;
+    }
+
+    canvas {
+        height: calc(100% - 3.4em);
+    }
+
+    #chat-box-room {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        bottom: 3.4em;
+        background-color: white;
+        border-top: 1px solid black;
+    }
+}

@@ -1,0 +1,47 @@
+.goal-container-parent {
+    height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+app-navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+app-goal-container {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border: 1px solid gray;
+    border-radius: 2em;
+    box-shadow: 0 1rem 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 600px) {
+
+    app-navbar {
+        position: relative;
+    }
+
+    app-goal-container {
+        min-width: none;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .goal-container-parent {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}

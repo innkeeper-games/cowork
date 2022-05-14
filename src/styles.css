@@ -1,0 +1,57 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins Regular";
+    src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    font-family: "Helvetica", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins Bold", sans-serif;
+}
+
+button:not(:hover):not(:active) {
+    box-shadow: 0 4px #ebcf6c;
+    margin-bottom: 4px;
+}
+
+button:hover:not(:active) {
+    box-shadow: 0 2px #ebcf6c;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+button:active {
+    margin-top: 4px;
+}
+
+button {
+    cursor: pointer;
+    display: block;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    background-color: #fce17f;
+    border-radius: 8px;
+    font-family: "Poppins Bold", sans-serif;
+    font-weight: bold;
+    padding: 0 1ch 0 1ch;
+}
+
+button a, button {
+    text-align: center;
+    color: black;
+}

@@ -1,0 +1,25 @@
+<div tabindex="0" class="chat-message" [ngClass]="{'editable': canEdit, 'editing': editing}">
+    <div class="item">
+        <div class="top">
+            <div class="meta">
+                <p class="author" tabindex="0" (click)="openTooltip()" (keyboard.down)="openTooltip()">{{ data.display_name }}</p>
+                <p class="sent-date" value="MM/dd/yyyy h:mm a">{{ data.sent_date | date:'MM/dd/yyyy h:mm a'}}</p>
+            </div>
+            <div class="tools">
+                <a title="Edit" tabindex="0" (click)="edit()" (keydown.enter)="edit()">
+                    <i class="bi bi-pencil"></i>
+                </a>
+                <a title="Delete" tabindex="0" (click)="delete()" (keydown.enter)="delete()">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </div>
+        </div>
+        <p class="chat-contents" [style.display]="editing ? 'none' : 'inline'">
+            {{ data.contents }} <span class="edited" [style.display]="data.edited ? 'inline' : 'none'">(edited)</span>
+        </p>
+        <form novalidate [style.display]="editing ? 'flex' : 'none'">
+            <textarea id="edit-field-{{data.chat_id}}" (blur)="this.editing = false;" class="editing-contents" tabindex="0" (keydown.enter)="sendEdits()" [(ngModel)]="newContents" [ngModelOptions]="{standalone: true}">{{ data.contents }}</textarea>
+            <p>{{ newContents }}</p>
+        </form>
+    </div>
+</div>

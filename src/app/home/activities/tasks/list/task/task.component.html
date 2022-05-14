@@ -1,0 +1,13 @@
+<div draggable="false" (click)="openTask($event)" (keydown.enter)="openTask($event)" tabindex="0" aria-haspopup="menu"
+  [ngClass]="isListing ? 'listing' : 'task'" [class.active]="this.data.active && isListing" [class.complete]="this.data.complete" [cdkDragDisabled]="!isListing" id="{{ data.task_id }}" (cdkDragStarted)="startDragging($event)" cdkDrag vsDragScroll [cdkDragStartDelay]="mobile ? 300 : 0">
+    <div class="center">
+      <div class="tags">
+        <ng-template appTag></ng-template>
+      </div>
+      <div *ngIf="isListing; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock><div id="{{ data.task_id }}-title" class="title">{{ data.title || "Untitled task"}}</div></ng-template>
+      <ng-template #elseBlock><div id="{{ data.task_id }}-title" class="title">{{ data.title || "This user is not currently sharing an active task."}}</div></ng-template>
+      <div id="{{ data.task_id }}-full" class="full">
+      </div>
+    </div>
+</div>

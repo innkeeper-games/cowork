@@ -1,0 +1,126 @@
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    height: 100%;
+}
+
+.nav h3 {
+    margin: 0 12px;
+}
+
+.subpage {
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    height: 100%;
+    background-color: white;
+    padding: 0 12px;
+}
+
+.back {
+    cursor: pointer;
+    padding-right: 1ch;
+}
+
+.subpage-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.subpage-header h4 {
+    margin: 0;
+}
+
+.list {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    height: 70vh;
+}
+
+.margin {
+    margin: 0.2em 18px 0.2em 18px;
+    padding: 0 0 2em 0;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2ch;
+}
+
+.description-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    gap: 1em;
+    padding: 0 2ch;
+}
+
+.description-save {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-element {
+    display: flex;
+    flex: 1 0 0;
+}
+
+button {
+    margin-left: auto;
+    width: 10ch;
+    padding: 0.2em 2ch 0.2em 2ch;
+}
+
+#dropin-wrapper {
+    padding-bottom: 2em;
+}
+
+#submit-button {
+    width: 100%;
+}
+
+.pro-header {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+input {
+    margin-left: 2ch;
+}
+
+.hidden {
+    display: none;
+}
+
+.price h3 {
+    display: inline;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.price {
+    margin: 1em 0;
+}
+
+.time {
+    font-family: 'Poppins Bold';
+    opacity: 0.5;
+}
+
+ul {
+    list-style-type: '✓';
+    padding-left: 1ch;
+    margin: 0;
+}
+
+li {
+    padding-left: 1ch;
+}

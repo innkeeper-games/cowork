@@ -1,0 +1,85 @@
+app-navbar {
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+app-footer {
+    width: 100%;
+}
+
+#scroll {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+#app-instructions {
+    margin: 2em 0;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    color: #011638;
+}
+
+.step div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step div h2 {
+    font-family: "Noto Sans", sans-serif;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.step h2 {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: lighter;
+}
+
+.step h2 a {
+    color: #011638;
+}
+
+.final div {
+    width: 100%;
+    text-align: center;
+}
+
+.step img {
+    margin: 1em 2ch 1em 2ch;
+    border-radius: 2em;
+    box-shadow: 0 0 1rem #000000dd;
+    max-height: 50vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .step {
+        flex-direction: column;
+        align-items: center;
+        max-height: none;
+        margin: 0 2ch;
+    }
+
+    .step img {
+        max-height: none;
+        width: 187px;
+        height: 313px;
+    }
+
+    #app-instructions {
+        max-width: 100%;
+    }
+}

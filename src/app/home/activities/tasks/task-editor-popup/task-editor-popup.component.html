@@ -1,0 +1,67 @@
+<div class="modal" (click)="onClose($event)">
+    <div id="editor" class="modal-content" tabindex="0" [ngClass]="{'complete' : this.data.complete}" tabindex="0" role="menu">
+        <div class="task-header">
+            <textarea id="task-title-field" (focus)="editTitle()" (keydown.enter)="saveTitle()" (blur)="saveTitle()"
+                [(ngModel)]="enteredTitle" [disabled]="!this.data.can_edit_title">{{ data.title }}</textarea>
+            <a tabindex="0" (keydown.enter)="onClose($event)" (click)="onClose($event)" class="close-task">X</a>
+        </div>
+        <div class="task-content">
+            <div class="task-main">
+                <form (submit)="onClose($event)">
+                    <div tabindex="0" class="tooltip-parent" [style.display]="data.has_listing ? 'inherit' : 'none'">
+                        <h3>Listing</h3>
+                        <span role="tooltip">A listing is your personal copy of a task. Shared versions of the task will not have this
+                            information.</span>
+                    </div>
+                    <div class="tags" [style.display]="data.has_listing ? 'inherit' : 'none'">
+                        <ng-template appTag></ng-template>
+                    </div>
+                    <div class="time" [style.display]="minutes > 0 ? 'inherit' : 'none'">
+                        <i class="bi bi-stopwatch"></i>
+                        <span>You've spent {{ minutes }} minutes on this.</span>
+                    </div>
+                    <h3>Task</h3>
+                    <div class="description">
+                        <label for="event-details">Description</label>
+                        <textarea id="event-details" name="event-details" rows="6" style="resize: none;"
+                            [(ngModel)]="enteredDescription" (blur)="saveDescription()"
+                            [disabled]="!this.data.can_edit_contents">{{ data.description }}</textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="task-sidebar">
+                <div [ngClass]="this.data.can_edit_settings ? 'settings' : 'hidden-settings'">
+                    <h6 class="task-actions">Task Settings</h6>
+                    <div class="toggle">
+                        <span tabindex="0" class="tooltip-parent">Public<span role="tooltip">Set a task to public if you want it to be
+                                visible to others.</span></span>
+                        <label class="switch">
+                            <input type="checkbox" id="public" (change)="changePublic()" [checked]="this.data.public">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="toggle">
+                        <span>Complete</span>
+                        <label class="tick">
+                            <input type="checkbox" id="public" (change)="changeComplete()" [checked]="this.data.complete">
+                            <span class="checkbox"></span>
+                        </label>
+                    </div>
+                </div>
+                <button [style.display]="this.data.has_listing ? 'none' : 'block'" tabindex="0" (click)="saveTask()" (keydown.enter)="saveTask()">Save Task</button>
+                <div [ngClass]="this.data.has_listing ? 'settings' : 'hidden-settings'">
+                    <h6 class="task-actions">Listing Settings</h6>
+                    <div class="tags-settings">
+                        <button tabindex="0" (click)="toggleTags()"
+                        (keydown.enter)="toggleTags()">Tags</button>
+                         <ng-template appTagsPopup></ng-template>
+                    </div>
+                    <button class="close-button" tabindex="0" (click)="onClose($event)"
+                        (keydown.enter)="onClose($event)">Close</button>
+                    <button class="remove-task" tabindex="0" (click)="removeTask($event)"
+                        (keydown.enter)="removeTask($event)">Remove</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

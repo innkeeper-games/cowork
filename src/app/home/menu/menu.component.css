@@ -1,0 +1,92 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: 100%;
+    background-color: white;
+    padding: 0.5ch;
+}
+
+.notification {
+    position: absolute;
+    font-size: 0.5em;
+    top: -2px;
+    right: -2px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    background: #aa3838;
+    color: white;
+  }
+
+span {
+    font-size: 0.8em
+}
+
+a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: #b4b4b4;
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: left;
+    padding: 1ch;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+a:hover:not(.selected), a:focus {
+    color: black;
+}
+
+.selected {
+    color: black;
+    outline: none;
+}
+
+#room-nav {
+    display: none;
+}
+
+#update-notes-nav {
+    margin-top: auto;
+}
+
+@media only screen and (max-height: 420px) {
+    #settings-nav {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: row;
+        border-top: solid 1px black;
+        height: auto;
+        padding: 0;
+    }
+
+    a {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #settings-nav {
+        position: relative;
+    }
+
+    #room-nav {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    nav {
+        border-radius: 0 2rem 0 0;
+    }
+}

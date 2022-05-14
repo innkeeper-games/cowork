@@ -1,0 +1,67 @@
+#checkpoint-list {
+    background-color: white;
+    min-width: 200px;
+    padding: 1em 2ch;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins Bold", sans-serif;
+    background-color: white;
+    border-radius: 2rem 0 2rem 0;
+    box-shadow: 0 1rem 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+#checkpoints {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 0.2em;
+}
+
+#checkpoints h4 {
+    margin: 0 8px;
+}
+
+.online {
+    color: #18701d;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2ch;
+    margin: 0 8px;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+.header h3 {
+    margin: 0;
+}
+
+.checkpoint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkpoint:hover, .checkpoint:focus {
+    background-color: #dfdfdf;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.checkpoint {
+    padding: 0.5em 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    #checkpoint-list {
+        width: fit-content;
+        padding: 0.5em 1ch;
+        border-radius: 2rem 0 2rem 0;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}

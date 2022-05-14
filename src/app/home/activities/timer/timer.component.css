@@ -1,0 +1,144 @@
+#not-in-session {
+    flex: 1 0 0;
+    padding: 0.2em 2ch 0.2em 2ch;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+}
+
+#consumable {
+    text-align: center;
+    font-size: 8em;
+    color: #011638;
+}
+
+.tooltip-parent {
+    display: flex;
+    width: min-content;
+    border-bottom: 2px dotted #000;
+    position: relative;
+}
+
+.tooltip-parent h2 {
+    margin: 0;
+}
+
+.tooltip-parent span {
+    visibility: hidden;
+    position: absolute;
+    background-color: white;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 8px;
+    z-index: 1;
+    top: 1em;
+    left: 4ch;
+    width: 20ch;
+}
+
+.tooltip-parent:hover span, .tooltip-parent:focus span {
+    visibility: visible;
+}
+
+#participants {
+    text-align: center;
+}
+
+.participant:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+th {
+    text-align: center;
+}
+
+th button {
+    font-size: 1em;
+    margin: 0.2em auto 0.2em auto;
+}
+
+.join-button {
+    margin-left: auto;
+}
+
+.join {
+    display: flex;
+    align-items: flex-end;
+}
+
+h2, #participants {
+    margin: 0.2em 0 0.2em 0;
+}
+
+#participants {
+    text-align: center;
+}
+
+#join {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+#time {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-size:3em;
+}
+
+#time-display {
+    flex-grow: 1;
+    font-size: 2em;
+    text-align: center;
+}
+
+#options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.arrow {
+    font-size: 2em;
+    margin: 0 0.2ch 0 0.2ch;
+    cursor: pointer;
+    color: #adbbd3;
+}
+
+.arrow::selection {
+    background: white;
+}
+
+.arrow:hover, .arrow:active {
+    color: #011638;
+}
+
+button {
+    font-size: 2em;
+    margin: 0 0.2ch 0 0.2ch;
+}
+
+#active-task {
+    text-align: center;
+    margin: 0.5em 0 0.5em 0;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5em 0 0.5em 0;
+}
+
+@media only screen and (max-width: 600px) {
+    #time-display {
+        font-size: 1.5em;
+    }
+
+    .arrow {
+        font-size: 1.5em;
+    }
+}

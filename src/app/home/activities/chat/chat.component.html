@@ -1,0 +1,13 @@
+<div class="scroll-container">
+    <app-panel-header [header]="header"></app-panel-header>
+    <div id="list" (scroll)="onListScroll()" role="log">
+        <ng-template appChatMessage></ng-template>
+        <p id="retrieving">
+            <a id="load-more" (click)="loadMore()" (keydown.enter)="loadMore()">Load more messages</a>
+            <a class="hidden" id="retrieving-now">Retrieving more messages...</a>
+        </p>
+    </div>
+    <form id="chat-box" novalidate>
+        <textarea id="chat-field" class="contents" tabindex="0" (keydown.enter)="onSendChat($event)" placeholder="Message the room..."></textarea>
+    </form>
+</div>

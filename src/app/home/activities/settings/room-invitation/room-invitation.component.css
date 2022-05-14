@@ -1,0 +1,23 @@
+.invitation:hover {
+    background-color: #D5D5DB;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    max-width: 10ch;
+    flex: 1 0 0;
+    margin-right: 2ch;
+}
+
+.button-label {
+    padding: 0.2em 0 0.2em 0;
+}
+
+.room-label {
+    flex: 1 0 0;
+    margin-left: 2ch;
+}

@@ -1,0 +1,85 @@
+<ng-template appUpdateNotesPopup></ng-template>
+<ng-template appOnboardingPopup></ng-template>
+<nav id="tabs" role="tablist" aria-orientation="vertical" aria-label="Activities">
+    <a
+        role="tab"
+        aria-selected="false"
+        aria-controls="room"
+        title="Room"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/settings', $event)"
+        (keydown.arrowdown)="navigate('/home/chat', $event)"
+        (keydown.enter)="navigate('/home/room', $event)" (click)="navigate('/home/room', $event)" id="room-nav" href="/home/room">
+        <i class="bi bi-house-door"></i>
+        <span class="notification hidden" id="room-notification">0</span>
+    </a>
+    <a
+        role="tab"
+        aria-selected="false"
+        aria-controls="chat"
+        title="Chat"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/settings', $event)"
+        (keydown.arrowdown)="navigate('/home/timer', $event)"
+        (keydown.enter)="navigate('/home/chat', $event)" (click)="navigate('/home/chat', $event)" id="chat-nav" href="/home/chat">
+        <i class="bi bi-chat"></i>
+        <span class="notification hidden" id="chat-notification">0</span>
+    </a>
+    <a  
+        role="tab"
+        aria-selected="false"
+        aria-controls="timer"
+        title="Timer"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/chat', $event)"
+        (keydown.arrowdown)="navigate('/home/stats', $event)"
+        (keydown.enter)="navigate('/home/timer', $event)" (click)="navigate('/home/timer', $event)" id="timer-nav" href="/home/timer">
+        <i class="bi bi-stopwatch"></i>
+        <span class="notification hidden" id="timer-notification">0</span>
+    </a>
+    <a  
+        role="tab"
+        aria-selected="false"
+        aria-controls="stats"
+        title="Stats"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/timer', $event)"
+        (keydown.arrowdown)="navigate('/home/tasks', $event)"
+        (keydown.enter)="navigate('/home/stats', $event)" (click)="navigate('/home/stats', $event)" id="stats-nav" href="/home/stats">
+        <i class="bi bi-graph-up-arrow"></i>
+        <span class="notification hidden" id="stats-notification">0</span>
+    </a>
+    <a
+        role="tab"
+        aria-selected="true"
+        aria-controls="tasks"
+        title="Tasks"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/stats', $event)"
+        (keydown.arrowdown)="navigate('/home/settings', $event)"
+        (keydown.enter)="navigate('/home/tasks',$event)" (click)="navigate('/home/tasks', $event)" id="tasks-nav" href="/home/tasks">
+        <i class="bi bi-list-task"></i>
+        <span class="notification hidden" id="tasks-notification">0</span>
+    </a>
+    <a  role="tab"
+        aria-selected="false"
+        aria-controls="settings"
+        title="Settings"
+        class="nav-tab"
+        tabindex="-1"
+        (keydown.arrowup)="navigate('/home/tasks', $event)"
+        (keydown.arrowdown)="navigate('/home/chat', $event)"
+        (keydown.enter)="navigate('/home/settings', $event)" (click)="navigate('/home/settings', $event)" id="settings-nav" href="/home/settings">
+        <i class="bi bi-gear"></i>
+        <span class="notification hidden" id="settings-notification">0</span>
+    </a>
+    <a title="Update Notes" [ngStyle]="{ 'display': this.updateNotesDisplay }" tabindex="0" (keydown.enter)="openUpdateNotes()" (click)="openUpdateNotes()" id="update-notes-nav">
+        <i class="bi bi-newspaper"></i>
+        <span class="notification" id="update-notes-notification">0</span>
+    </a>
+</nav>

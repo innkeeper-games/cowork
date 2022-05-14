@@ -1,0 +1,52 @@
+.tooltip {
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: white;
+    border-radius: 2em;
+    box-shadow: 0 1rem 1px 0 rgba(0, 0, 0, 0.2);
+    padding: 1em 0;
+    gap: 1ch;
+}
+
+#name-field {
+    cursor: pointer;
+    font-size: small;
+    height: small;
+    text-align: center;
+    resize: none;
+    background-color: transparent;
+    border-color: transparent;
+    margin-bottom: 0;
+    width: 100px;
+    height: 1em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    gap: 1ch;
+}
+
+.active {
+    color: black;
+}
+
+a {
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: #b4b4b4;
+    cursor: pointer;
+    font-size: 24px;
+    text-decoration: none;
+    text-align: left;
+    padding: 0.2em;
+}
+
+a:hover:not(.selected), a:focus {
+    color: black;
+    outline: none;
+}

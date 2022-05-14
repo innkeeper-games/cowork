@@ -1,0 +1,37 @@
+.popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    overflow: auto;
+    background-color: white;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1ch;
+}
+
+.title {
+    flex: 1;
+    overflow-wrap: break-word;
+    background-color: white;
+    border: none;
+}
+
+.new-tag {
+    flex: 1;
+    display: flex;
+}
+
+h3 {
+    margin: 0;
+    font-size: large;
+}
